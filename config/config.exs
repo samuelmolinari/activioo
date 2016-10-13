@@ -26,5 +26,10 @@ use Mix.Config
 # by uncommenting the line below and defining dev.exs, test.exs and such.
 # Configuration from the imported file will override the ones defined
 # here (which is why it is important to import them last).
-#
-#     import_config "#{Mix.env}.exs"
+
+
+config :activio, ecto_repos: [Activio.Repo]
+config :activio, Repo,
+  adapter: Ecto.Adapters.Postgres
+
+import_config "#{Mix.env}.exs"
